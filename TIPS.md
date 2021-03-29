@@ -6,7 +6,7 @@ Here's a few tips and recommendations to help you as you go along your ROM hacki
 
 This saves not only yourself time, in potentially creating in-game credits or for finding resources over again for future hacks, but also people who wonder what you use in your game (provided you include it in your release). Plus it gives appropriate credit to all resource authors in a simple way, regardless if they were explicit in asking for credit.
 
-An example CREDITS file is included.
+> An example CREDITS file is included.
 
 
 ## "What Patches Do I Need??"

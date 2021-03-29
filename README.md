@@ -53,7 +53,7 @@ To make life easier, this template comes with several scripts to automate the pr
     insert_uberasm.bat
     - runs UberASM to insert its patches to your ROM.
 
-IMPORTANT: in ALL of these scripts change '[BaseRom File Name]' to what you named your ROM file, e.g. "MyBaseROM" 
+IMPORTANT: in ALL of these scripts change `[BaseRom File Name]` to what you named your ROM file.
 
 If all is setup correctly you can run these scripts on-demand to quickly apply new assets to your ROM or perform a quick backup.
 
@@ -78,4 +78,4 @@ Once you are all set up and have been working on your ROM is it convenient to be
 
 ## Clean Up & Finish
 
-You're all set! You can delete this README and the one in `common` plus all Download links if you desire. Now get Hacking!
+You're all set! You can delete this README and the one in `common` plus all Download links and the TIPS file if you want. Now get Hacking!
