@@ -34,7 +34,7 @@ This template comes with a `common` folder that collates all commonly used tools
 > See The README in that folder for further instructions, before proceeding further.
 
 
-3. Insertion Scripts
+## Insertion Scripts
 
 To make life easier, this template comes with several scripts to automate the process of applying custom assets to your ROM:
     
@@ -59,7 +59,7 @@ IMPORTANT: in ALL of these scripts change '[BaseRom File Name]' to what you name
 
 If all is setup correctly you can run these scripts on-demand to quickly apply new assets to your ROM or perform a quick backup.
 
-3.b Backups Scripts
+## Backups Scripts
 
 Ever
 
@@ -78,6 +78,6 @@ Ever
      your ROM and restore file in the 'Backup' folder. Requires Flips and the
      Lunar Magic restore system to be set up.
 
-4. Clean Up & Finish
+## Clean Up & Finish
 
 You're all set! You can delete this README and the one in `common` plus all Download links if you desire. Now get Hacking!
