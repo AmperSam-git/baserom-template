@@ -1,6 +1,6 @@
-# AmperSam's Super Mario World SMW Base ROM Template
+# SMW Base ROM Template
 
-"What is a base ROM?"
+### "What is a base ROM?"
 
 A base ROM is just a term for a specific collection of patches and custom assets that would get applied to Super Mario World repeated to serve as the "base" for making a ROM hack or series of hacks. For example, the ROMHack Races community has a base ROM for all creators wishing to make a race level, and it is tailored to their requirements so there is consistency across all levels. 
 
@@ -61,7 +61,7 @@ If all is setup correctly you can run these scripts on-demand to quickly apply n
 
 ## Backups Scripts
 
-Ever
+Once you are all set up and have been working on your ROM is it convenient to be able to back up various aspects of your game, as such there's a few backup scripts you are free to use:
 
     export_levels.bat
     - exports all modified levels from your ROM using Lunar Magic to a timestamped

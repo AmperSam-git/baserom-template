@@ -82,17 +82,22 @@ AddKMusic is self-contained, extract the whole ZIP file to it's own folder here 
 PIXI, GPS, and UberASM normally each require its own 'list.txt' file to specify what resources to apply, but this Base ROM template uses batch scripts to point each tool at it's own uniquely named list file they are as follows:
 
     list_asar.txt
-    - a file where you can list the patches for use with Asar from the `asar` folder for use with `apply_patches.bat`
+    - a file where you can list the patches for use with Asar from the `asar` folder
+     for use with `apply_patches.bat`
 
     list_pixi.txt
-    - the custom sprite list file for PIXI and can be filled in in the same fashion as the regular one, e.g. '00 custom_sprite.cfg/.json' etc.
+    - the custom sprite list file for PIXI and can be filled in in the same fashion as
+     the regular one, e.g. '00 custom_sprite.cfg/.json' etc.
 
     list_gps.txt
-    - the custom block list for GPS where you list blocks by Map16 tile number and references to the block ASM as usual, e.g. '0200 custom_block.asm' etc.
+    - the custom block list for GPS where you list blocks by Map16 tile number and 
+    references to the block ASM as usual, e.g. '0200 custom_block.asm' etc.
 
     list_uberasm.txt
-    - a copy of the UberASM list file, where you can specific various patches to be applied to your ROM. 
-    - IMPORTANT: rename '[YOUR ROM]' in this list file to what you named your base ROM file (your '.smc').
+    - a copy of the UberASM list file, where you can specific various patches to be
+     applied to your ROM. 
+    - IMPORTANT: rename '[YOUR ROM]' in this list file to what you named your base 
+    ROM file.
 
 
 ## Adding Custom Assets
