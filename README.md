@@ -22,9 +22,9 @@ First, make a copy of your ROM of Super Mario World (SMW) into the main folder o
 
 In Lunar Magic make any small change and save your ROM, this will allow Lunar Magic to setup its restore function which will create the 'sysLMRestore' folder and restore files.
 
-Next, it is useful to extract all Graphics and ExGraphics from your ROM using 'File > Graphics > Extract GFX from ROM' and 'File > Graphics > Extract ExGFX from ROM' this will populate the 'Graphics' and 'ExGraphics' folders in your main Base ROM folder with SMW graphics files.
+Next, it is useful to extract all Graphics and ExGraphics from your ROM using `File > Graphics > Extract GFX from ROM` and `File > Graphics > Extract ExGFX from ROM` this will populate the 'Graphics' and 'ExGraphics' folders in your main Base ROM folder with SMW graphics files.
 
-It is also common to Expand your ROM to at least 2MB via 'File > Expand ROM > Expand ROM to 2MB' to give yourself ample headroom to make changes and add things to your ROM.
+It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Expand ROM to 2MB` to give yourself ample headroom to make changes and add things to your ROM.
 
 
 ## The `common` Folder
