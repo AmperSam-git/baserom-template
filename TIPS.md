@@ -29,6 +29,15 @@ People often don't know what global patches are generally recommended for a base
 
 Download and add these to `common/asar` plus any other global patches you may want to make use of and update `list_asar.txt` appropriately to use it with your Base ROM all at once.
 
+
 ## Enable FastROM in Lunar Magic
 
 In Lunar Magic, you can enable FastROM addressing on your ROM to via 'Options > Enable FastROM Speed & Apply Patch' and 'Use FastROM Addressing for this ROM'. This sets up Lunar Magic to use the "LoROM" map for all data and ASM hacks it uses, which is required for getting the speed benefit out of anything else using FastROM hacks and reduces slow down for onscreen sprites
+
+
+## Use Restore Feature of Lunar Magic
+
+Lunar Magic has the capacity to restore your ROM in case of errors, by rolling back changes. To make sure it's setup visit `Options > Restore Point Options...` in the Lunar Magic menu.
+
+
+
