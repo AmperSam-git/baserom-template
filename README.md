@@ -6,14 +6,14 @@ A base ROM is just a term for a specific collection of patches and custom assets
 
 That said, this resource is simply an organization aide and doesn't teach you how to use custom resources with the various tools within, nor any level design, it exists to help you get yourself better organized when creating a base ROM for your Super Mario World hacks.
 
-Also, make note of where you extracted this template, e.g. "C:\Users\YourName\Documents\MyBaseRom", it will be needed later. 
+Also, make note of where you extracted this template, e.g. `C:\Users\YourName\Documents\MyBaseRom`, it will be needed later. 
 
 
 ## Getting Started
 
 ### Provide Super Mario World
 
-First, make a copy of your ROM of Super Mario World (SMW) into the main folder of this Base ROM template and rename it however you like, e.g. 'MyBaseRom.smc'. (If your copy of Super Mario World has an extension of '.sfc' rename it to '.smc' this prevents minor headaches elsewhere).
+First, make a copy of your ROM of Super Mario World (SMW) into the main folder of this Base ROM template and rename it however you like, e.g. `MyBaseRom.smc`. (If your copy of Super Mario World has an extension of `.sfc` rename it to `.smc` this prevents minor headaches elsewhere).
 
 
 ### Initialize Your ROM in Lunar Magic
