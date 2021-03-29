@@ -39,9 +39,7 @@ This template comes with a `common` folder that collates all commonly used tools
 To make life easier, this template comes with several scripts to automate the process of applying custom assets to your ROM:
     
     apply_patches.bat
-    - runs Asar to apply global patches to your ROM. Note: you must specify
-    each patch you intended to use on your base ROM in this script on new
-    lines by renaming [Patch] in the script.
+    - runs Asar to apply global patches to your ROM. 
 
     insert_blocks.bat
     -  runs GPS to apply custom blocks to your ROM.
