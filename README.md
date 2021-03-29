@@ -1,7 +1,4 @@
-#-----------------------#
-# SMW Base ROM Template #
-#     by AmperSam       #
-#-----------------------#
+# AmperSam's Super Mario World SMW Base ROM Template
 
 "What is a base ROM?"
 
