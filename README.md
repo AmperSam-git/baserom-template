@@ -43,7 +43,7 @@ To make life easier, this template comes with several scripts to automate the pr
     - runs Asar to apply global patches to your ROM. 
 
     @insert_blocks.bat
-    -  runs GPS to apply custom blocks to your ROM.
+    - runs GPS to apply custom blocks to your ROM.
     
     @insert_sprites.bat
     - runs PIXI to insert custom sprites to your ROM.
@@ -60,7 +60,7 @@ If all is setup correctly you can run these scripts on-demand to quickly apply n
 
 ### Backup & Restore Scripts
 
-Once you are all set up and have been working on your ROM is it convenient to be able to back up various aspects of your game, I've written a few scripts for exporting levels, map16 and global palettes from your ROM:
+Once you are all set up and have been working on your ROM is it convenient to be able to back up various aspects of your game, so I've written a few scripts for exporting your levels, all of Map16 and your global palettes from your ROM:
 
     @export_levels.bat
     - exports all modified levels from your ROM using Lunar Magic to a timestamped
@@ -86,7 +86,7 @@ Also I have a basic set of script for time-stamped backups of your ROM, plus a s
 
 ### Patch Creation
 
-If you need to quickly generate a BPS patch for your rom for distribution `@create_bp2.bat` will quickly create a patch of your ROM
+If you need to quickly generate a BPS patch for your rom for distribution `@create_bps.bat` will quickly create a patch of your ROM
 using Floating IPS (Flips).
 
 ## Clean Up & Finish
