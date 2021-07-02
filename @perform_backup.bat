@@ -20,8 +20,8 @@ move %LRP_FILE% "Backup\%TIMESTAMP%_%BASEROM_NAME%.lrp"
 copy %ROM_FILE% "Backup\%TIMESTAMP%_%BASEROM_NAME%.smc"
 copy %ROM_FILE% "Backup\latest_%BASEROM_NAME%.smc"
 
-call export_levels.bat
-call export_map16.bat
-call export_palettes.bat
+call @export_levels.bat
+call @export_map16.bat
+call @export_palettes.bat
 
 goto :EOF

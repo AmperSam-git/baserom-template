@@ -14,6 +14,7 @@ set TIMESTAMP="%Year%%Month%%Day%"
 set ROMFILE="MyBaseROM.smc"
 
 mkdir "Levels\%TIMESTAMP%"
+mkdir "Levels\latest"
 
 ".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\%TIMESTAMP%\level" 
 ".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\latest\level"  
