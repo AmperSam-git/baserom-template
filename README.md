@@ -28,7 +28,7 @@ It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Ex
 
 This template comes with a `common` folder that collates all commonly used tools and resources you need to apply patches and code to your ROM in one place.
 
-> See The [README](.\common\README.md) in that folder for further instructions, before proceeding further.
+> See The [README](/common/README.md) in that folder for further instructions, before proceeding further.
 
 
 ## Scripts Galore!
