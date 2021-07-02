@@ -6,8 +6,6 @@ A "base ROM" in hacking parlance is just a term for a specific collection of pat
 
 That said, this resource is simply an organization aide and doesn't teach you how to use custom resources with the various tools within, nor any level design, it exists to help you get yourself better organized when creating a base ROM for your Super Mario World hacks or as a blank canvas for starting a new ROM hack project.
 
-IMPORTANT: make note of where you extracted this template, e.g. `C:\Users\YourName\Documents\MyBaseRom`, it will be needed later. 
-
 
 ## Getting Started
 
@@ -30,7 +28,7 @@ It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Ex
 
 This template comes with a `common` folder that collates all commonly used tools and resources you need to apply patches and code to your ROM in one place.
 
-> See The README in that folder for further instructions, before proceeding further.
+> See The [README](.\common\README.md) in that folder for further instructions, before proceeding further.
 
 
 ## Scripts Galore!
@@ -38,7 +36,8 @@ This template comes with a `common` folder that collates all commonly used tools
 ### Insertion Scripts
 
 To make life easier, this template comes with several scripts to automate the process of applying custom assets to your ROM:
-    
+ 
+
     @apply_patches.bat
     - runs Asar to apply global patches to your ROM. 
 
