@@ -27,6 +27,8 @@ These tools all come with additional documentation, files and so forth that aren
 
 When downloading Asar, copy only `asar.exe` to the `common` folder. The folder `asar` is pre-made in this folder for you to store any global, Asar-required patches.
 
+List File:
+
     list_asar.txt
     - a file where you can list the patches for use with Asar from the `asar` folder
      for use with `apply_patches.bat`
@@ -42,6 +44,7 @@ From the downloaded ZIP of GPS, copy only the following into the `common` folder
     - defines.asm
     - main.asm
 
+List File:
 
     list_gps.txt
     - the custom block list for GPS where you list blocks by Map16 tile number and 
@@ -66,6 +69,8 @@ From the downloaded ZIP file of PIXI, copy only the following into the `common` 
 
 CFG Editor is a tool included with PIXI for tweaking configuration files of custom sprites.
 
+List File:
+
     list_pixi.txt
     - the custom sprite list file for PIXI and can be filled in in the same fashion as
      the regular one, e.g. '00 custom_sprite.cfg/.json' etc.
@@ -85,6 +90,7 @@ From the downloaded UberASM ZIP file, copy only the following into the `common` 
     - UberASMTool.exe
     - UberASMTool.pub
 
+List File:
 
     list_uberasm.txt
     - a copy of the UberASM list file, where you can specific various patches to be
