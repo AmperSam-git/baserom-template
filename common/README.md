@@ -108,7 +108,7 @@ The restore, backup and exports scripts need Lunar Magic to work, placing a copy
 
 ### 7. Floating IPS
 
-Include a copy of `flip.exe` here.
+Include a copy of `flips.exe` here.
 
 
 ## Adding Custom Assets
