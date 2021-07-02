@@ -11,10 +11,11 @@ set Minute=%DateTime:~10,2%
 
 set TIMESTAMP="%Year%%Month%%Day%"
 
-set ROMFILE="[BaseRom File Name].smc"
+set ROMFILE="MyBaseROM.smc"
 
 mkdir "Levels\%TIMESTAMP%"
 
-".\common\lm321.exe" -ExportMultLevels "%ROMFILE%" "Levels\%TIMESTAMP%\level" 
+".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\%TIMESTAMP%\level" 
+".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\latest\level"  
 
 pause

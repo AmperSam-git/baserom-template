@@ -11,10 +11,11 @@ set Minute=%DateTime:~10,2%
 
 set TIMESTAMP="%Year%%Month%%Day%_%Hour%%Minute%"
 
-set ROMFILE="[BaseRom File Name].smc"
+set ROMFILE="MyBaseROM.smc"
 
-mkdir "Palettes"
+mkdir "Map16"
 
-".\common\lm321.exe" -ExportSharedPalette "%ROMFILE%" "Palettes\%TIMESTAMP%_Shared.pal"
+".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%" "Map16\AllMap16_%TIMESTAMP%.map16" 
+".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%" "Map16\AllMap16_latest.map16" 
 
 pause

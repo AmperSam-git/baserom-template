@@ -1,6 +1,6 @@
 @echo off
 
-set ROMFILE="..\[BaseRom File Name].smc"
+set ROMFILE="..\MyBaseROM.smc"
 
 cd .\common\
 .\gps.exe -l "list_gps.txt" %ROMFILE%

@@ -1,6 +1,6 @@
 @echo off
 
-set ROMFILE="..\[BaseRom File Name].smc"
+set ROMFILE="..\MyBaseROM.smc"
 
 cd .\AddmusicK_1.0.8\
 .\AddmusicK.exe %ROMFILE%

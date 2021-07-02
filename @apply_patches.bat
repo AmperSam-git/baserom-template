@@ -1,6 +1,6 @@
 @echo off
 
-set ROMFILE="..\[BaseRom File Name].smc"
+set ROMFILE="..\MyBaseROM.smc"
 
 cd .\common\
 for /f "tokens=*" %%a in (list_asar.txt) do (

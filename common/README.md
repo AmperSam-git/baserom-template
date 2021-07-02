@@ -9,11 +9,13 @@ For applying custom code and patches to your Base ROM there is a basic set of to
 
     > AddKMusic: a tool for inserting custom music into your ROM
     > Asar: an assembler for applying patches to your BaseROM
+    > Floating IPS (Flips): creates and applies BPS patches
     > Gopher Popcorn Stew (GPS): a custom block insertion tool
-    > PIXI: a custom sprite insertion tool
+    > Lunar Magic: the essential level editor for SMW hacking
+    > PIXI: a sprite insertion tool
     > UberASM: a tool for inserting level, overworld, game mode, status bar, sprite and global ASM without using a patch
 
-Download links have been provided to download all of those tools. (At the time of writing, the tools' versions were: AddKMusic 1.0.8, asar # 1.71, GPS # 1.4.1, PIXI # 1.31, and UberASM Tool 1.4)
+Download links have been provided to download all of those tools. (At the time of writing, the tools' versions were: AddKMusic # 1.0.8, asar # 1.71, GPS # 1.4.1, PIXI # 1.32, and UberASM Tool 1.4, Lunar Magic # 3.30, Floating IPS # 1.31)
 
 
 ## Setting Up Tools
@@ -25,6 +27,9 @@ These tools all come with additional documentation, files and so forth that aren
 
 When downloading Asar, copy only `asar.exe` to the `common` folder. The folder `asar` is pre-made in this folder for you to store any global, Asar-required patches.
 
+    list_asar.txt
+    - a file where you can list the patches for use with Asar from the `asar` folder
+     for use with `apply_patches.bat`
 
 ### 2. GPS
 
@@ -36,6 +41,11 @@ From the downloaded ZIP of GPS, copy only the following into the `common` folder
     - asar.dll
     - defines.asm
     - main.asm
+
+
+    list_gps.txt
+    - the custom block list for GPS where you list blocks by Map16 tile number and 
+    references to the block ASM as usual, e.g. '0200 custom_block.asm' etc.
 
 
 ### 3. PIXI
@@ -56,6 +66,10 @@ From the downloaded ZIP file of PIXI, copy only the following into the `common` 
 
 CFG Editor is a tool included with PIXI for tweaking configuration files of custom sprites.
 
+    list_pixi.txt
+    - the custom sprite list file for PIXI and can be filled in in the same fashion as
+     the regular one, e.g. '00 custom_sprite.cfg/.json' etc.
+
 
 ### 4. UberASM
 
@@ -72,32 +86,23 @@ From the downloaded UberASM ZIP file, copy only the following into the `common` 
     - UberASMTool.pub
 
 
-### 5. AddKMusic
-
-AddKMusic is self-contained, extract the whole ZIP file to it's own folder here in `common`.
-
-
-## Custom List Files
-
-PIXI, GPS, and UberASM normally each require its own 'list.txt' file to specify what resources to apply, but this Base ROM template uses batch scripts to point each tool at it's own uniquely named list file they are as follows:
-
-    list_asar.txt
-    - a file where you can list the patches for use with Asar from the `asar` folder
-     for use with `apply_patches.bat`
-
-    list_pixi.txt
-    - the custom sprite list file for PIXI and can be filled in in the same fashion as
-     the regular one, e.g. '00 custom_sprite.cfg/.json' etc.
-
-    list_gps.txt
-    - the custom block list for GPS where you list blocks by Map16 tile number and 
-    references to the block ASM as usual, e.g. '0200 custom_block.asm' etc.
-
     list_uberasm.txt
     - a copy of the UberASM list file, where you can specific various patches to be
      applied to your ROM. 
     - IMPORTANT: rename '[YOUR ROM]' in this list file to what you named your base 
     ROM file.
+
+### 5. AddKMusic
+
+AddKMusic is self-contained, extract the whole ZIP file for this tool to it's own folder here in `common`.
+
+### 6. Lunar Magic
+
+The restore, backup and exports scripts need Lunar Magic to work, placing a copy of `Lunar Magic.exe` in this folder will set that up.
+
+### 7. Floating IPS
+
+Include a copy of `flip.exe` here.
 
 
 ## Adding Custom Assets
