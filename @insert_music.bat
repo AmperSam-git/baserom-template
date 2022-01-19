@@ -1,7 +1,7 @@
 @echo off
 
-set ROMFILE="..\MyBaseROM.smc"
+call "@baserom_filename.bat"
 
 cd .\AddmusicK_1.0.8\
-.\AddmusicK.exe %ROMFILE%
+.\AddmusicK.exe "..\%ROMFILE%.smc"
 pause

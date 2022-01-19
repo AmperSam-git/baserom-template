@@ -1,5 +1,7 @@
 @echo off
 
+call "@baserom_filename.bat"
+
 setlocal
 for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set DateTime=%%a
 
@@ -11,9 +13,7 @@ set Minute=%DateTime:~10,2%
 
 set TIMESTAMP="%Year%%Month%%Day%_%Hour%%Minute%"
 
-set ROMFILE="MyBaseROM.smc"
-
-".\common\Lunar Magic.exe" -ExportSharedPalette "%ROMFILE%" "Palettes\%TIMESTAMP%_Shared.pal"
-".\common\Lunar Magic.exe" -ExportSharedPalette "%ROMFILE%" "Palettes\Shared_latest.pal"
+".\common\Lunar Magic.exe" -ExportSharedPalette "%ROMFILE%.smc" "Palettes\%TIMESTAMP%_Shared.pal"
+".\common\Lunar Magic.exe" -ExportSharedPalette "%ROMFILE%.smc" "Palettes\Shared_latest.pal"
 
 pause

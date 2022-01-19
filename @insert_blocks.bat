@@ -1,7 +1,7 @@
 @echo off
 
-set ROMFILE="..\MyBaseROM.smc"
+call "@baserom_filename.bat"
 
 cd .\common\
-.\gps.exe -l "list_gps.txt" %ROMFILE%
+.\gps.exe -l "list_gps.txt" "..\%ROMFILE%.smc"
 pause

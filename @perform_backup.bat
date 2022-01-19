@@ -1,5 +1,7 @@
 @echo off
 
+call "@baserom_filename.bat"
+
 setlocal
 for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set DateTime=%%a
 
@@ -9,19 +11,17 @@ set Day=%DateTime:~6,2%
 set Hour=%DateTime:~8,2%
 set Minute=%DateTime:~10,2%
 
-set BASEROM_NAME="MyBaseROM"
-
 set TIMESTAMP="%Year%%Month%%Day%_%Hour%%Minute%"
 
-set LRP_FILE="sysLMRestore\%BASEROM_NAME%.lrp"
-set ROM_FILE="%BASEROM_NAME%.smc"
+set LRP_FILE="sysLMRestore\%ROMFILE%.lrp"
 
-move %LRP_FILE% "Backup\%TIMESTAMP%_%BASEROM_NAME%.lrp"
-copy %ROM_FILE% "Backup\%TIMESTAMP%_%BASEROM_NAME%.smc"
-copy %ROM_FILE% "Backup\latest_%BASEROM_NAME%.smc"
+move %LRP_FILE% "Backup\%TIMESTAMP%_%ROMFILE%.lrp"
+copy "%ROMFILE%.smc" "Backup\%TIMESTAMP%_%ROMFILE%.smc"
+copy "%ROMFILE%.smc" "Backup\latest_%ROMFILE%.smc"
 
 call @export_levels.bat
 call @export_map16.bat
 call @export_palettes.bat
 
+pause
 goto :EOF

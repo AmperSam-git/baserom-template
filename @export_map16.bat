@@ -1,5 +1,7 @@
 @echo off
 
+call "@baserom_filename.bat"
+
 setlocal
 for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set DateTime=%%a
 
@@ -11,11 +13,9 @@ set Minute=%DateTime:~10,2%
 
 set TIMESTAMP="%Year%%Month%%Day%_%Hour%%Minute%"
 
-set ROMFILE="MyBaseROM.smc"
-
 mkdir "Map16"
 
-".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%" "Map16\AllMap16_%TIMESTAMP%.map16" 
-".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%" "Map16\AllMap16_latest.map16" 
+".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%.smc" "Map16\AllMap16_%TIMESTAMP%.map16" 
+".\common\Lunar Magic.exe" -ExportAllMap16 "%ROMFILE%.smc" "Map16\AllMap16_latest.map16" 
 
 pause
