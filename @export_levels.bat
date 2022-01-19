@@ -1,5 +1,7 @@
 @echo off
 
+call "@baserom_filename.bat"
+
 setlocal
 for /f "delims=" %%a in ('wmic OS Get localdatetime ^| find "."') do set DateTime=%%a
 
@@ -11,12 +13,10 @@ set Minute=%DateTime:~10,2%
 
 set TIMESTAMP="%Year%%Month%%Day%"
 
-set ROMFILE="MyBaseROM.smc"
-
 mkdir "Levels\%TIMESTAMP%"
 mkdir "Levels\latest"
 
-".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\%TIMESTAMP%\level" 
-".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%" "Levels\latest\level"  
+".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%.smc" "Levels\%TIMESTAMP%\level" 
+".\common\Lunar Magic.exe" -ExportMultLevels "%ROMFILE%.smc" "Levels\latest\level"  
 
 pause
