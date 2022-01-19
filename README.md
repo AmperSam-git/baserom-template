@@ -53,7 +53,7 @@ To make life easier, this template comes with several scripts to automate the pr
     @insert_uberasm.bat
     - runs UberASM to insert its patches to your ROM.
 
-IMPORTANT: in @baserom_filename.cfg, change `MyBaseROM` to what you named your ROM file. Don't enter the file extension, because the scripts will set it for you.
+IMPORTANT: in @baserom_filename.bat, change `MyBaseROM` to what you named your ROM file. Don't enter the file extension, because the scripts will set it for you.
 
 If all is setup correctly you can run these scripts on-demand to quickly apply new assets to your ROM or perform a quick backup.
 
