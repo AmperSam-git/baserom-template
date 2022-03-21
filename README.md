@@ -26,67 +26,20 @@ It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Ex
 
 ## The `common` Folder
 
-This template comes with a `common` folder that collates all commonly used tools and resources you need to apply patches and code to your ROM in one place.
+This baserom comes with a folder that helps you organize all commonly used tools, resources you need, patches to apply to your ROM, etc. in one place to keep the main directory of your project neat and tidy and streamline your workflow.
 
 > See The [README](/common/README.md) in that folder for further instructions, before proceeding further.
 
+## Helpful Scripts
 
-## Scripts Galore!
+To make life easier for you as a hacker, this baserom comes some helpful scripts to automate the process of applying additional custom assets to your ROM as well as for backing things up and creating a patch for distribution.
 
-### Insertion Scripts
+- `@baserom_filename.bat` Simply a way to specify what you have called your ROM file for all the scripts.
+- `@build_baserom.bat` Does a lot of the work for you when it comes to inserting custom assets into your ROM by present a list the options corresponding to each of the tools. Additionally will create a BPS patch for distribution.
+- `@backup_baserom.bat` Some basic backup options that leverages some Lunar Magic features to export all modified levels, edited map16 and/or shared palettes from your ROM, as well as a basic way to create a time-stamped backup of your ROM file, and create a BPS patch on demand.
+- `@restore_from_backup.bat` Options to create a fresh ROM, restore global assets from a time-stamped based backup and imports previously-exported levels, map16 and palettes into it. Requires Lunar Magic and the backup scripts to be run first.
 
-To make life easier, this template comes with several scripts to automate the process of applying custom assets to your ROM:
- 
-
-    @apply_patches.bat
-    - runs Asar to apply global patches to your ROM. 
-
-    @insert_blocks.bat
-    - runs GPS to apply custom blocks to your ROM.
-    
-    @insert_sprites.bat
-    - runs PIXI to insert custom sprites to your ROM.
-
-    @insert_music.bat
-    - runs AddKMusic to insert custom music to your ROM.
-    
-    @insert_uberasm.bat
-    - runs UberASM to insert its patches to your ROM.
-
-IMPORTANT: in @baserom_filename.bat, change `MyBaseROM` to what you named your ROM file. Don't enter the file extension, because the scripts will set it for you.
-
-If all is setup correctly you can run these scripts on-demand to quickly apply new assets to your ROM or perform a quick backup.
-
-### Backup & Restore Scripts
-
-Once you are all set up and have been working on your ROM is it convenient to be able to back up various aspects of your game, so I've written a few scripts for exporting your levels, all of Map16 and your global palettes from your ROM:
-
-    @export_levels.bat
-    - exports all modified levels from your ROM using Lunar Magic to a timestamped
-     'Levels' directory.
-
-    @export_map16.bat
-    - exports all of Map16 (the entire tile map for custom tiles) from your ROM using Lunar Magic
-
-    @export_palettes.bat
-    - exports the shared palette from your ROM using Lunar Magic and a timestamps it.
- 
-Also I have a basic set of script for time-stamped backups of your ROM, plus a script for restoring your ROM from a backup and importing exported assets.
-
-    @perform_backup.bat
-    - performs a time-stamped based backup that will create a snapshot of
-     your ROM and restore file in the 'Backup' folder. Requires Flips and the
-     Lunar Magic restore system to be set up.
-    
-    @restore_from_backup.bat
-    - restores global assets your ROM from a time-stamped based backup and 
-     imports previously-exported levels, map16 and palettes into your ROM.
-     Requires Lunar Magic.
-
-### Patch Creation
-
-If you need to quickly generate a BPS patch for your rom for distribution `@create_bps.bat` will quickly create a patch of your ROM
-using Floating IPS (Flips).
+See the [Wiki page](https://github.com/AmperSam-git/baserom-template/wiki/Using-the-Build-Scripts) for more information about these scripts.
 
 ## Clean Up & Finish
 

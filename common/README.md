@@ -110,7 +110,6 @@ The restore, backup and exports scripts need Lunar Magic to work, placing a copy
 
 Include a copy of `flips.exe` here.
 
-
 ## Adding Custom Assets
 
 Instructions for adding custom assets for use with these individually also apply to this bundled folder structure, i.e. copying blocks, sprites, patches, extra folders, etc. remains as easy as copying things into their respective folders in the `common` folder and updating the appropriate list files.

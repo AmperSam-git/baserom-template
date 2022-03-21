@@ -1,1 +1,2 @@
-set ROMFILE=MyBaseROM
+:: Name of your ROM
+set ROMNAME=MyBaseROM
