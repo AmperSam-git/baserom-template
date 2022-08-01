@@ -52,7 +52,7 @@ if "!Action!"=="2" (
 if "!Action!"=="3" (
     echo Inserting custom sprites...
     pushd "%WORKING_DIR%common\"
-    pixi.exe -l common\%PIXI_LIST% !ROMFILE!
+    pixi.exe -l %PIXI_LIST% !ROMFILE!
     echo Done.
 )
 :: Insert custom music with AddmusicK
