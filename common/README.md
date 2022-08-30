@@ -94,9 +94,7 @@ From the downloaded UberASM ZIP file, copy only the following into the `common` 
 
     list_uberasm.txt
     - a copy of the UberASM list file, where you can specific various patches to be
-     applied to your ROM. 
-    - IMPORTANT: rename '[YOUR ROM]' in this list file to what you named your base 
-    ROM file.
+     applied to your ROM.
 
 ### 5. AddKMusic
 
