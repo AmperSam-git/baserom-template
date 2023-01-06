@@ -1,119 +1,134 @@
 @echo off
-Setlocal EnableDelayedExpansion
 cls
 :start
 
-:: Get ROM name
-call %~dp0@baserom_filename.bat
+:: Working Directory
+setlocal DisableDelayedExpansion
+set WORKING_DIR=%~sdp0
+set WORKING_DIR=%WORKING_DIR:!=^^!%
+setlocal EnableDelayedExpansion
 
-:: DO NOT CHANGE THE VARIABLES BELOW
+:: ROM Definitions
+set ROM_NAME_FILE=%WORKING_DIR%\Other\rom-name.txt
+:: Check if rom-name.txt exists
+if not exist !ROM_NAME_FILE! (
+    :: Ask for ROM name
+    set /p ROM_NAME_INPUT=Enter the filename of your ROM, e.g. "MyHack":
+    echo !ROM_NAME_INPUT!>!ROM_NAME_FILE!
+    :: Set ROM name
+    set /p ROM_NAME=<!ROM_NAME_FILE!
+) else (
+    :: Set ROM name
+    set /p ROM_NAME=<!ROM_NAME_FILE!
+)
 
-:: Working Directory 
-set WORKING_DIR=%~dp0
+:: Import Definitions
+call %WORKING_DIR%Tools\@tool_defines.bat
+
+:: Directory Definitiions
+set BACKUP_DIR=%WORKING_DIR%Backup\
+set TOOLS_DIR=%WORKING_DIR%Tools\
 
 :: Variables
-set BACKUP="%WORKING_DIR%Backup\latest_%ROMNAME%.smc"
-set ROMFILE="%WORKING_DIR%%ROMNAME%.smc"
-set PATCHFILE="%WORKING_DIR%%ROMNAME%.bps"
+set ROM_FILE="%WORKING_DIR%%ROM_NAME%.smc"
+set PATCH_FILE="%WORKING_DIR%%ROM_NAME%.bps"
 
 :: Restore locations
-set LEVELS_BACKUP="%WORKING_DIR%Levels\latest\"
-set MAP16_BACKUP="%WORKING_DIR%Map16\AllMap16_latest.map16"
-set PAL_BACKUP="%WORKING_DIR%Palettes\Shared_latest.pal"
+set LEVELS_BACKUP="%BACKUP_DIR%Levels\latest\"
+set RESTORE_FILE="%BACKUP_DIR%ROM\latest_%ROM_NAME%.smc"
+set MAP16_BACKUP="%BACKUP_DIR%Map16\latest_AllMap16.map16"
+set PAL_BACKUP="%BACKUP_DIR%Palettes\latest_Shared.pal"
 
-:: Lunar Magic location
-set LM="%WORKING_DIR%common\Lunar Magic.exe"
+:: Lunar Magic
+set LM="!TOOLS_DIR!LunarMagic\Lunar Magic.exe"
+set LM_DIR=!TOOLS_DIR!LunarMagic\
+:: Check if Lunar Magic exists and download if not
+if not exist "!LM_DIR!Lunar Magic.exe" (
+    echo Lunar Magic not found, downloading...
+    powershell Invoke-WebRequest !LM_DL! -OutFile !LM_ZIP! >NUL
+    powershell Expand-Archive !LM_ZIP! -DestinationPath !LM_DIR! >NUL
+    :: Delete junk files
+    for %%a in (!LM_JUNK!) do (del !LM_DIR!%%a)
+    :: Delete Zip
+    del !LM_ZIP!
+    echo Done.
+)
 
 :: Options
 echo Restore Actions -- Only use this with a fresh ROM
 echo.
-echo   1. Create fresh ROM out of baserom patch.
-echo   2. Transfer Global ExAnimation, Overworld, Titlescreen and Credits from backup
-echo   3. Import levels from backup
-echo   4. Import all of Map16 from backup
-echo   5. Import shared palettes from backup
+echo   1. Transfer Global ExAnimation, Overworld, Titlescreen and Credits from backup
+echo   2. Import levels from backup
+echo   3. Import all of Map16 from backup
+echo   4. Import shared palettes from backup
 echo   0. Exit
 echo.
 set /p Action=Enter the number of your choice: 
 
-:: Create fresh baserom from patch.
-if "!Action!"=="1" (
-    echo Patching fresh baserom...
-    if not exist %PATCHFILE% (
-        echo Could not find baserom patch. Please try again.
-        exit /b
-    ) else (
-        :: Check if a patched ROM already exists and make a temporary backup
-        if exist !ROMFILE! (
-            echo Hack already exists, making temporary backup called "%ROMNAME%.smc~".
-            :: Make backup of ROM just in case of error
-            copy !ROMFILE! "!ROMFILE!~"
-        )
-        :: Check for unmodified SMW rom
-        set SMWROM=
-        if not exist "%WORKING_DIR%\sysLMRestore\smwOrig.smc" (
-            echo Could not find an unmodified SMW file. Enter the path to an original, unmodified SMW smc: 
-            set /p SMWROM=
-        ) else (
-            set SMWROM="%WORKING_DIR%\sysLMRestore\smwOrig.smc"
-        )
-        :: Apply baserom patch with Flips
-        "%WORKING_DIR%common\flips.exe" --apply %PATCHFILE% !SMWROM! !ROMFILE!
-        echo Done.
-    )
-)
 :: Transferr Global ExAnimation, Overworld, Titlescreen and Credits
-if "!Action!"=="2" (
+if "!Action!"=="1" (
     echo Transferring ExAnimation, Overworld, Titlescreen and Credits...
-    if not exist !BACKUP! (
-        echo Could not a back-up of your ROM. Run a back-up first before proceeding.
+    if not exist !RESTORE_FILE! (
+        echo.
+        echo Could not find a back-up of your ROM. Run a back-up first before proceeding.
+        echo.
+        pause
         exit /b
     ) else (
         :: Run Lunar Magic Actions
-        !LM! -TransferLevelGlobalExAnim !ROMFILE! !BACKUP!
-        !LM! -TransferOverworld !ROMFILE! !BACKUP!
-        !LM! -TransferTitleScreen !ROMFILE! !BACKUP!
-        !LM! -TransferCredits !ROMFILE! !BACKUP!
+        !LM! -TransferLevelGlobalExAnim !ROM_FILE! !RESTORE_FILE!
+        !LM! -TransferOverworld !ROM_FILE! !RESTORE_FILE!
+        !LM! -TransferTitleScreen !ROM_FILE! !RESTORE_FILE!
+        !LM! -TransferCredits !ROM_FILE! !RESTORE_FILE!
         echo Done.
     )
 )
+
 :: Import backed up levels
-if "!Action!"=="3" (
+if "!Action!"=="2" (
     echo Importing levels...
     if not exist !LEVELS_BACKUP! (
         echo Could not find a back-up of your levels.
         exit /b
     ) else (
-        !LM! -ImportMultLevels !ROMFILE! !LEVELS_BACKUP!
+        !LM! -ImportMultLevels !ROM_FILE! !LEVELS_BACKUP!
         echo Done.
     )
 )
+
 :: Import backed up map16
-if "!Action!"=="4" (
+if "!Action!"=="3" (
     echo Importing map16...
     if not exist !MAP16_BACKUP! (
         echo Could not find a back-up of map16.
         exit /b
     ) else (
-        !LM! -ImportAllMap16 !ROMFILE! !MAP16_BACKUP!
+        !LM! -ImportAllMap16 !ROM_FILE! !MAP16_BACKUP!
         echo Done.
     )
 )
+
 :: Import backed up palettes
-if "!Action!"=="5" (
+if "!Action!"=="4" (
     echo Importing palettes...
     if not exist !PAL_BACKUP! (
         echo Could not find a back-up of palettes.
         exit /b
     ) else (
-        !LM! -ImportSharedPalette  !ROMFILE! !PAL_BACKUP!
+        !LM! -ImportSharedPalette  !ROM_FILE! !PAL_BACKUP!
         echo Done.
     )
 )
-popd
 
 if "!Action!"=="0" (
     echo Have a nice day ^^_^^
     exit /b
 )
+
 if '!Action!'=='' echo Nothing is not valid option, please try again.
+
+echo.
+echo All done. Have a nice day ^^_^^
+echo.
+pause
+exit /b

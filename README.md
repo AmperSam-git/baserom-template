@@ -6,7 +6,6 @@ A "baserom" in hacking jargon is just a term for a specific collection of patche
 
 That said, this resource is simply an organization aide and doesn't teach you how to use custom resources with the various tools within, nor any level design, it exists to help you get yourself better organized when creating a baserom for your Super Mario World hacks or as a blank canvas for starting a new ROM hack project.
 
-
 ## Getting Started
 
 ### Provide Super Mario World
@@ -21,23 +20,13 @@ Next, it is useful to extract all Graphics and ExGraphics from your ROM using `F
 
 It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Expand ROM to 2MB` to give yourself enough headroom to make changes and add things to your hack.
 
-## The common Folder
-
-This baserom comes with [a folder](/common) that helps you organize all commonly used tools, resources you need, patches to apply to your ROM, etc. in one place to keep the main directory of your project neat and tidy and streamline your workflow.
-
-See The [README](/common/README.md) in that folder for further instructions, before proceeding further.
-
 ## Helpful Scripts
 
 To make life easier for you as a hacker, this baserom comes some helpful scripts to automate the process of applying additional custom assets to your ROM as well as for backing things up and creating a patch for distribution.
 
-- `@baserom_filename.bat` Simply a way to specify what you have called your ROM file for all the scripts.
+- `@initialize_baserom.bat` This is a first-run script when setting up the baserom that will download each and every tool on demand that is used by the build system if it isn't detected.
 - `@build_baserom.bat` Does a lot of the work for you when it comes to inserting custom assets into your ROM by present a list the options corresponding to each of the tools. Additionally will create a BPS patch for distribution.
-- `@backup_baserom.bat` Some basic backup options that leverages some Lunar Magic features to export all modified levels, edited map16 and/or shared palettes from your ROM, as well as a basic way to create a time-stamped backup of your ROM file, and create a BPS patch on demand.
+- `@backup_hack.bat` Some basic backup options that leverages some Lunar Magic features to export all modified levels, edited map16 and/or shared palettes from your ROM, as well as a basic way to create a time-stamped backup of your ROM file, and create a BPS patch on demand.
 - `@restore_from_backup.bat` Options to create a fresh ROM, restore global assets from a time-stamped based backup and imports previously-exported levels, map16 and palettes into it. Requires Lunar Magic and the backup scripts to be run first.
 
 See the [Wiki page](https://github.com/AmperSam-git/baserom-template/wiki/Using-the-Build-Scripts) for more information about these scripts.
-
-## Clean Up & Finish
-
-You're all set! You can delete this README and the one in `common` plus all Download links and the TIPS file if you want. Now get Hacking!
