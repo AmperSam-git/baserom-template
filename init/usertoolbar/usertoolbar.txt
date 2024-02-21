@@ -27,7 +27,7 @@ LM_SPACER
 ***START***
 usertoolbar_wrapper.bat "--asar" "%3"
 19,Apply Patches
-LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 
 ***START***
 usertoolbar_wrapper.bat "--path" "!asar_path!"
