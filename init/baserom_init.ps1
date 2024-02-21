@@ -121,7 +121,7 @@ function SetupAMK($ToolName, $DownloadUrl, $DestinationDir, $JunkFiles, $DocFile
             Download-Tool $ToolName $DownloadUrl
             # If AddMusicK destination doesn't exist, create it
             if (-not (Test-Path -Path $DestinationDir -PathType Container)) {
-                New-Item -Path $DestinationDir -ItemType Directory
+                New-Item -Path $DestinationDir -ItemType Directory | Out-Null
             }
             # AddMusicK specific actions because zip is subfolder >:(
             Expand-Archive -Path $env:temp\$ToolName.zip -DestinationPath $env:temp\ -Force

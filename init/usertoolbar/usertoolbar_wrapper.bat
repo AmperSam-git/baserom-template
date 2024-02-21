@@ -32,7 +32,7 @@ set "uber_list=!uber_path!\list.txt"
 set "uber_exe=UberASMTool.exe"
 :: asar
 set "asar_path=!tools_dir!asar"
-set "asar_list=!asar_path!\patchlist.txt"
+set "asar_list=!asar_path!\list.txt"
 set "asar_exe=asar.exe"
 
 
