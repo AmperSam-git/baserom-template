@@ -1,0 +1,13 @@
+docs/*
+tools/*
+workspace/*
+*.lnk
+*.exe
+*.dll
+rom.txt
+# files to keep
+!.gitkeep
+!tools/init
+!tools/asar/patchlist.txt
+!workspace/ExGraphics
+!workspace/Graphics

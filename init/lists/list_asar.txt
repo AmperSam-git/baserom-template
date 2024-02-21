@@ -1,0 +1,2 @@
+; List your asar patches in this file by absolute path or relative to the asar.exe.
+; A line with a semi-colon will be skipped.

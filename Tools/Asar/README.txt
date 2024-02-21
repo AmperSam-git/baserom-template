@@ -1,1 +1,0 @@
-For every Asar patch you want to apply, add the full file name of the .asm file to the 'patchlist.txt' so it works with the build_baserom script.

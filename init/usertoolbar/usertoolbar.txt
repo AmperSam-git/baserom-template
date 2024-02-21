@@ -1,0 +1,167 @@
+LM_ADDIMAGE "usertoolbar_icons.bmp"
+
+***START***
+LM_SPACER
+
+***START***
+LM_FILE_EMULATOR_RUN
+11,Run ROM in Emulator (F4)
+LM_USEIMAGE_LIST
+
+***START***
+LM_FILE_RELOAD_ROM
+16,Reload Current ROM (Ctrl+R)
+LM_USEIMAGE_LIST
+'r',VK_CONTROL
+
+***START***
+explorer.exe %2
+9,Open Current ROM Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+
+; Asar
+***START***
+usertoolbar_wrapper.bat "--asar" "%3"
+19,Apply Patches
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--path" "!asar_path!"
+8,Open Patches Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--file" "!asar_list!"
+2,Edit List of Patches'
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+
+; PIXI
+***START***
+usertoolbar_wrapper.bat "--run-tool" "!pixi_path!" "!pixi_exe!" "-l !pixi_list!" "%3"
+20,Insert Sprites with PIXI
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
+
+***START***
+usertoolbar_wrapper.bat "--path" "!pixi_path!"
+4,Open PIXI Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--file" "!pixi_list!"
+2,Edit List of Sprites
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+***START***
+usertoolbar_wrapper.bat "--app" "!pixi_path!" "CFG editor.exe" ""
+3,Launch CFG Editor
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+
+; GPS
+***START***
+usertoolbar_wrapper.bat "--run-tool" "!gps_path!" "!gps_exe!" "-d" "%3"
+21,Insert Blocks with GPS
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
+
+***START***
+usertoolbar_wrapper.bat "--path" "!gps_path!"
+5,Open GPS Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--file" "!gps_list!"
+2,Edit List of Custom Blocks
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+
+; UberASM
+***START***
+usertoolbar_wrapper.bat "--run-tool" "!uber_path!" "!uber_exe!" "!uber_list!" "%3"
+22,Insert UberASM with UberASMTool
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
+
+***START***
+usertoolbar_wrapper.bat "--path" "!uber_path!"
+6,Open UberASMTool Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--file" "!uber_list!"
+2,Edit List of UberASM
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+
+; AddMusicK
+
+***START***
+usertoolbar_wrapper.bat "--run-tool" "!amk_path!" "!amk_exe!" "-v" "%3"
+23,Insert music with AddMusicK
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
+
+***START***
+usertoolbar_wrapper.bat "--path" "!amk_path!"
+7,Open AddMusicK Directory
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--file" "!amk_list!"
+2,Edit List of Music
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+LM_SPACER
+
+***START***
+LM_VIEW_SURFACE_OUTLINE
+12,View Tile Outlines (Ctrl+F2)
+LM_USEIMAGE_LIST
+
+***START***
+LM_VIEW_POW
+13,View Blue P-Switch/POW Effects (F12)
+LM_USEIMAGE_LIST
+
+***START***
+LM_VIEW_SILVER_POW
+14,View Silver P-Switch/POW Effects (F11)
+LM_USEIMAGE_LIST
+
+***START***
+LM_VIEW_LINE_ON
+15,Toggle ON/OFF Switch Animation (0)
+LM_USEIMAGE_LIST
+
+***START***
+LM_SPACER
+
+***START***
+LM_MOUSE_LEVEL_BACK
+17,Go Back to Previous Level in History
+LM_USEIMAGE_LIST
+
+***START***
+LM_MOUSE_LEVEL_FORWARD
+18,Go Forward to Next Level in History
+LM_USEIMAGE_LIST
+
+***END***
