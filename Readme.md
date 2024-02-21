@@ -1,5 +1,7 @@
 # AmperSam's SMW Baserom Template
 
+![image](./init/screenshot.png)
+
 ## "What is a Baserom?"
 
 A "baserom" in hacking jargon is just a term for a specific collection of patches and custom assets that would get applied to Super Mario World repeated to serve as the "base" for making a ROM hack. For example, the ROMHack Races community has a baserom for all creators wishing to make a race level, and it is tailored to their requirements so there is consistency across all levels.
@@ -10,9 +12,7 @@ That said, this resource is simply an organization aide and doesn't teach you ho
 
 ### Provide Super Mario World
 
-First, make a copy of your ROM of Super Mario World (SMW) and put it in "workspace" folder of this baserom template.
-
-You can rename it to whatever you like, e.g. `MyBaseRom.smc`, since the scripts are agnostic to the file name. If your copy of Super Mario World has an extension of `.sfc` rename it to `.smc` this prevents minor headaches elsewhere.
+First, make a copy of your (headered)  Super Mario World ROM and put it in "workspace" folder of this baserom template. You can rename it to whatever you like, e.g. `MyBaseRom.smc`, since the build processes are agnostic to the file name. If your ROM has a file extension of `.sfc` rename it to `.smc` this prevents minor headaches elsewhere.
 
 ### Initialize the Baserom Tools
 
