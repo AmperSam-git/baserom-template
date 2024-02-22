@@ -4,13 +4,11 @@ A blank Super Mario World baserom template that uses some PowerShell scripts to 
 
 ![image](./init/screenshot.png)
 
-This resource is just a folder structure to organize a project with a handful of useful scripts and comes with no additional patches, ASM code, tools, etc.
+This resource is simply an organizational aide and doesn't teach you how to use custom resources or use the various tools within, nor any level design. It is just a folder structure with a handful of useful scripts and just exists to help you get better organized when creating a baserom for a Super Mario World hack or as a blank canvas for starting a new ROM hack project.
 
 ## "What is a Baserom?"
 
-A "baserom" in hacking jargon is just a term for a specific collection of patches and custom assets that would get applied to Super Mario World repeated to serve as the "base" for making a ROM hack. For example, the ROMHack Races community has a baserom for all creators wishing to make a race level, and it is tailored to their requirements so there is consistency across all levels.
-
-That said, this resource is simply an organization aide and doesn't teach you how to use custom resources with the various tools within, nor any level design, it exists to help you get yourself better organized when creating a baserom for your Super Mario World hacks or as a blank canvas for starting a new ROM hack project.
+A "baserom" in hacking jargon is just a term for a specific collection of patches and custom assets that would get applied to Super Mario World repeated to serve as the "base" for making a ROM hack. For example, the Romhack Races community provides a baserom to creators wishing to make a race level, and it is tailored to their requirements so there is consistency across all levels.
 
 ## Getting Started
 
