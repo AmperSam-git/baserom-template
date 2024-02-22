@@ -31,3 +31,21 @@ It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Ex
 ## Lunar Magic User Toolbar
 
 To make life easier for you as a hacker, this project template comes with a custom User Toolbar in Lunar Magic. It uses a script on the backend to automate the process of applying additional custom assets to your ROM right from Lunar Magic without the need for scripts or dragging your rom around.
+
+## Project Folders
+
+### docs
+
+The initialization script moves all the readmes and other documentation from the various tools to this folder, if they have any, for easy access.
+
+### init
+
+This contains the resources used to initialize the project. This includes some template list files that replace the default tool list files, the User Toolbar files, and initialization PowerShell scripts.
+
+### tools
+
+Folder where all the baserom tools will be "installed" by the initialization script.
+
+### workspace
+
+Your eventual project's root folder, will contain your ROM, any tool auxillary files and extracted graphics from your ROM.
