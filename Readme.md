@@ -1,8 +1,10 @@
 # AmperSam's SMW Baserom Template
 
-A Super Mario World baserom template that uses some PowerShell scripts to initialize a project and makes use of Lunar Magic's user toolbar functionality for building your project.
+A blank Super Mario World baserom template that uses some PowerShell scripts to initialize a project and makes use of Lunar Magic's user toolbar functionality for building your project.
 
 ![image](./init/screenshot.png)
+
+This resource is just a folder structure to organize a project with a handful of useful scripts and comes with no additional patches, ASM code, tools, etc.
 
 ## "What is a Baserom?"
 
