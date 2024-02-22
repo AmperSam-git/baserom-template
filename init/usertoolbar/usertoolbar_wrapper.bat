@@ -81,11 +81,13 @@ pause
 exit
 
 :RunAsar
+echo Applying patches with Asar...
 pushd %asar_path%
 for /f "tokens=*" %%a in ('findstr /v "^;" "%asar_list%"') do (
     %asar_exe% -v "%%a" %romfile%
 )
 popd
+echo Done
 pause
 exit
 
