@@ -135,7 +135,7 @@ usertoolbar_wrapper.bat "--file" "!amk_list!"
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 
 
-; Lunar Magic
+; Lunar Magic Actions
 ***START***
 LM_SPACER
 
@@ -150,6 +150,14 @@ LM_VIEW_SURFACE_OUTLINE
 LM_USEIMAGE_LIST
 
 ***START***
+LM_VIEW_BLOCK_CONTENTS
+26,View Block Contents (F6)
+LM_USEIMAGE_LIST
+
+***START***
+LM_SPACER
+
+***START***
 LM_VIEW_POW
 13,View Blue P-Switch/POW Effects (F12)
 LM_USEIMAGE_LIST
@@ -162,6 +170,24 @@ LM_USEIMAGE_LIST
 ***START***
 LM_VIEW_LINE_ON
 15,Toggle ON/OFF Switch Animation (0)
+LM_USEIMAGE_LIST
+
+***START***
+LM_SPACER
+
+***START***
+LM_VIEW_SCREEN_GRID
+28,View Sub-Screen Boundaries (F2)
+LM_USEIMAGE_LIST
+
+***START***
+LM_VIEW_SCREEN_GRID_2
+29,Show Game View Screen (F3)
+LM_USEIMAGE_LIST
+
+***START***
+LM_VIEW_TILE_GRID
+27,View Tile Grid Overlay (F8)
 LM_USEIMAGE_LIST
 
 ***START***
