@@ -3,6 +3,7 @@ LM_ADDIMAGE "usertoolbar_icons.bmp"
 ***START***
 LM_SPACER
 
+; Project
 ***START***
 LM_FILE_EMULATOR_RUN
 11,Run ROM in Emulator (F4)
@@ -18,6 +19,12 @@ LM_USEIMAGE_LIST
 explorer.exe %2
 9,Open Current ROM Directory
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+
+***START***
+usertoolbar_wrapper.bat "--backup" "%5"
+25,Backup Project (Ctrl+B)
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+'b',VK_CONTROL
 
 ***START***
 LM_SPACER
@@ -112,7 +119,6 @@ LM_SPACER
 
 
 ; AddMusicK
-
 ***START***
 usertoolbar_wrapper.bat "--run-tool" "!amk_path!" "!amk_exe!" "-v" "%3"
 23,Insert music with AddMusicK
@@ -130,7 +136,6 @@ LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 
 
 ; Lunar Magic
-
 ***START***
 LM_SPACER
 
