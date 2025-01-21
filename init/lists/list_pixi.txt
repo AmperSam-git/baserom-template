@@ -1,7 +1,9 @@
-; List your custom sprites in this file to be inserted by PIXI.
+; PIXI: LIST FILE
+; This is a list of all custom sprites to be inserted by PIXI.
 ; - sprites get listed by their ID number and the config file name (either .cfg or .json).
 ; - custom normal sprites can start at ID 00 and go up to BF.
 ; - other sprite types have special considerations, see PIXI's readme for more details.
+; Lines with a ; at the start are comments that are ignored by PIXI
 
 ; Add your sprites here
 ; 00 example.cfg

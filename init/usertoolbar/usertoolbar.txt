@@ -128,8 +128,16 @@ usertoolbar_wrapper.bat "--file" "!amk_list!"
 2,Edit List of Music
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 
+
+; Lunar Magic
+
 ***START***
 LM_SPACER
+
+***START***
+LM_VIEW_BLOCK_EXITS
+24,View Exit-Enabled Tiles (Ctrl+F1)
+LM_USEIMAGE_LIST
 
 ***START***
 LM_VIEW_SURFACE_OUTLINE

@@ -1,80 +1,62 @@
+; UBERASM TOOL: LIST FILE
+; This is a list of all the code files you're using, and when to run them.
+; See the README for more information.
+
+; sets verbose level, optional
 verbose: on
 
+; LEVEL CODE
+; Code files in this part of list will be run in specific levels.
 
-# UBERASM TOOL: LIST FILE
-# This is a list of all the code files you're using, and when to run them.
-
-
-# LEVEL CODE
-# Code files in this list will be run in specific levels.
-
-# EXAMPLE:
-# To run the code from the file "mycode.asm" in level 105,
-# put "mycode.asm" in the "level" folder
-# and add an entry to this list saying "105 mycode.asm"
-# (without the quotes, and without # in front).
-
-# - You can use the same code file in multiple levels!
-# - If you want to use multiple code files in the same level,
-#   check https://www.smwcentral.net/?p=faq&page=1515827-uberasm .
-# - To run the same code in every level, apply it to game mode 14 (see below).
+; - If you want to use multiple code files in the same level, you can list
+;   the files after the level number separated by commas
+; - To run the same code in every level, you can use an asterisk (*)
+;   followed by a comma-separated list. Or you can apply it to Game Mode 14.
 
 level:
 
-# OVERWORLD CODE
-# Code files in this list will be run on specific overworld maps.
 
-# Each map has a number:
-# 0: Main Map
-# 1: Yoshi's Island
-# 2: Vanilla Dome
-# 3: Forest of Illusion
-# 4: Valley of Bowser
-# 5: Special World
-# 6: Star Road
+; GAME MODE CODE
+; Code files in this part of list will be run during specific game modes.
 
-# EXAMPLE:
-# To run the code from the file "mycode.asm" on the Vanilla Dome map,
-# put "mycode.asm" in the "overworld" folder
-# and add an entry to this list saying "2 mycode.asm"
-# (without the quotes, and without # in front).
-
-overworld:
-
-# GAME MODE CODE
-# Code files in this list will be run during specific game modes.
-
-# Some common game modes are:
-# 01: "Nintendo Presents" screen
-# 07: Title Screen
-# 08: Title Screen (File select)
-# 0E: Overworld
-# 14: Level
-# You can also define your own (from 2A to FF).
-
-# EXAMPLE:
-# To run the code from the file "mycode.asm" in game mode 14 (i.e. in all levels),
-# put "mycode.asm" in the "gamemode" folder
-# and add an entry to this list saying "14 mycode.asm"
-# (without the quotes, and without # in front).
+; Some commonly used game modes are:
+;   01: "Nintendo Presents" screen
+;   07: Title Screen
+;   08: Title Screen (File select)
+;   0E: Overworld
+;   14: Level
+;
+; A full list of game modes used by Super Mario World can be referenced here:
+; - https://www.smwcentral.net/?p=memorymap&a=detail&game=smw&region=ram&detail=29b0e3d11c61
 
 gamemode:
 
 
-# OTHER OPTIONS
+; OVERWORLD CODE
+; Code files in this part of the list will be run on specific overworld maps.
 
-# Global code - this will be run all the time.
+; Each map has a number:
+;  0: Main Map
+;  1: Yoshi's Island
+;  2: Vanilla Dome
+;  3: Forest of Illusion
+;  4: Valley of Bowser
+;  5: Special World
+;  6: Star Road
+
+overworld:
+
+
+; OTHER OPTIONS
+
+; Global code - this will be run all the time.
 global:         other/global_code.asm
 
-# Status bar code - this will be run when the status bar is drawn to the screen.
+; Status bar code - this will be run when the status bar is drawn to the screen.
 statusbar:      other/status_code.asm
 
-# A file containing macros.
+; A file containing macros.
 macrolib:       other/macro_library.asm
 
-# Sprite-related RAM (see README). You probably don't need to change this.
-sprite:         $7FAC80   # 38 (SNES) or 68 (SA-1) bytes of free RAM.
-sprite-sa1:     $41AC80   # Optional for SA-1 ROMs.
-
-# The name of your ROM file - this will be used if you don't specify a ROM name
-# when running UberASM Tool.
+; Sprite-related RAM (see README). You probably don't need to change this.
+freeram:        $7FAC80   ; 38 (SNES) or 68 (SA-1) bytes of free RAM.

@@ -1,12 +1,14 @@
-; GPS CUSTOM BLOCKS LIST --------------------------------------------;
+; GPS CUSTOM BLOCKS LIST --------------------------------------------
 ; Place your custom blocks in this list file like so:
 ;
-;    <map 16 tile number>:<block act-as> custom_block.asm
+;    <map16 tile number>:<block act-as> custom_block.asm
 ;
-; Be sure not to use a tile value already in use by the baserom.
-; -------------------------------------------------------------------;
+; Lines with a ; at the start are comments that are ignored by GPS
+; -------------------------------------------------------------------
 
 ; Add your blocks here
+; Be sure not to use a tile value already in use below
+
 ; 400:130 example.asm
 
 

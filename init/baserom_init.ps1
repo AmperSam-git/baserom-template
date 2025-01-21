@@ -144,7 +144,7 @@ function SetupAMK($ToolName, $DownloadUrl, $DestinationDir, $JunkFiles, $DocFile
 # Start the main menu loop
 $UserChoice = $null
 while ($UserChoice -ne "4") {
-    Write-Host "Welcome! To set up your project's folder, run both of the following steps:`n"
+    Write-Host "Welcome! To set up your project's folder, the following:`n"
     Write-Host " 1. Download and set up commonly used tools"
     Write-Host " 0. Exit`n"
 
@@ -169,9 +169,8 @@ while ($UserChoice -ne "4") {
             SetupTool "PIXI" $PIXI_Download $PIXI_Dir $PIXI_Junk $PIXI_Docs "list_pixi.txt"
             SetupTool "Lunar Magic" $LunarMagic_Download $LunarMagic_Dir $LunarMagic_Junk $LunarMagic_Docs ""
             SetupTool "UberASMTool" $UberASMTool_Download $UberASMTool_Dir $UberASMTool_Junk $UberASMTool_Docs "list_uberasm.txt"
-            Write-Host "`nTool setup complete."
+            Write-Host "Tool setup complete!`n"
         }
-
 
         # Exit
         "0" {
