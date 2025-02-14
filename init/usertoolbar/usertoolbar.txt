@@ -21,9 +21,9 @@ explorer.exe %2
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 
 ***START***
-usertoolbar_wrapper.bat "--backup" "%5"
+usertoolbar_wrapper.bat "--back-up" "%5"
 25,Backup Project (Ctrl+B)
-LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
+LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 'b',VK_CONTROL
 
 ***START***
@@ -52,7 +52,7 @@ LM_SPACER
 
 ; PIXI
 ***START***
-usertoolbar_wrapper.bat "--run-tool" "!pixi_path!" "!pixi_exe!" "-l !pixi_list!" "%3"
+usertoolbar_wrapper.bat "--run-tool" "PIXI" "!pixi_path!" "!pixi_exe!" "--exerel" "%3"
 20,Insert Sprites with PIXI
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 
@@ -80,7 +80,7 @@ LM_SPACER
 
 ; GPS
 ***START***
-usertoolbar_wrapper.bat "--run-tool" "!gps_path!" "!gps_exe!" "-d" "%3"
+usertoolbar_wrapper.bat "--run-tool" "GPS" "!gps_path!" "!gps_exe!" "-d" "%3"
 21,Insert Blocks with GPS
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 
@@ -98,9 +98,9 @@ LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 LM_SPACER
 
 
-; UberASM
+; UberASM Tool
 ***START***
-usertoolbar_wrapper.bat "--run-tool" "!uber_path!" "!uber_exe!" "!uber_list!" "%3"
+usertoolbar_wrapper.bat "--run-tool" "UberASM Tool" "!uber_path!" "!uber_exe!" "!uber_list!" "%3"
 22,Insert UberASM with UberASMTool
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 
@@ -120,7 +120,7 @@ LM_SPACER
 
 ; AddMusicK
 ***START***
-usertoolbar_wrapper.bat "--run-tool" "!amk_path!" "!amk_exe!" "-v" "%3"
+usertoolbar_wrapper.bat "--run-tool" "AddMusicK" "!amk_path!" "!amk_exe!" "-v" "%3"
 23,Insert music with AddMusicK
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 

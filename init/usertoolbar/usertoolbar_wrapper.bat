@@ -7,7 +7,7 @@ set WORKING_DIR=%~dp0
 set WORKING_DIR=%WORKING_DIR:!=^^!%
 setlocal EnableDelayedExpansion
 
-:: get root directory since this script runs from the LM folder
+:: Get root directory since this script runs from the LM folder
 set "ROOT_DIR=!WORKING_DIR:\tools\lunar_magic=!"
 
 :: Other Defines
@@ -35,31 +35,32 @@ set "time_stamp=%Year%%Month%%Day%_%Hour%-%Minute%"
 
 :: Tools Defines
 
-:: addmusick
-set "amk_path=!tools_dir!addmusick"
-set "amk_list=!amk_path!\Addmusic_list.txt"
+:: AddMusicK
+set "amk_path=!tools_dir!addmusick\"
+set "amk_list=!amk_path!Addmusic_list.txt"
 set "amk_exe=AddmusicK.exe"
-:: pixi
-set "pixi_path=!tools_dir!pixi"
-set "pixi_list=!pixi_path!\list.txt"
-set "pixi_exe=!pixi_path!\pixi.exe"
-:: gps
-set "gps_path=!tools_dir!gps"
-set "gps_list=!gps_path!\list.txt"
+:: PIXI
+set "pixi_path=!tools_dir!pixi\"
+set "pixi_list=!pixi_path!list.txt"
+set "pixi_exe=pixi.exe"
+:: GPS
+set "gps_path=!tools_dir!gps\"
+set "gps_list=!gps_path!list.txt"
 set "gps_exe=gps.exe"
-:: uberasm
-set "uber_path=!tools_dir!uberasmtool"
-set "uber_list=!uber_path!\list.txt"
+:: UberASM Tool
+set "uber_path=!tools_dir!uberasmtool\"
+set "uber_list=!uber_path!list.txt"
 set "uber_exe=UberASMTool.exe"
-:: asar
-set "asar_path=!tools_dir!asar"
-set "asar_list=!asar_path!\list.txt"
+:: Asar
+set "asar_path=!tools_dir!asar\"
+set "asar_list=!asar_path!list.txt"
 set "asar_exe=asar.exe"
-:: lunar magic
-set "lm_path=!tools_dir!lunar_magic"
-set "lm_exe=Lunar Magic.exe"
+:: Lunar magic
+set "lm_path=!tools_dir!lunar_magic\"
+set "lm_exe=!lm_path!Lunar Magic.exe"
+set "lm_name=Lunar Magic"
 
-
+:: Menu
 :ParseArgs
 if "%~1"=="" goto :EOF
 
@@ -72,84 +73,142 @@ if /i "%~1"=="--path" (
     goto :OpenDir
 )
 if /i "%~1"=="--app" (
-    set path=%~2
-    set app=%~3
-    set param=%~4
+    set app_path=%~2
+    set app_exe=%~3
+    set app_param=%~4
     goto :OpenApp
 )
 if /i "%~1"=="--run-tool" (
-    set path=%~2
-    set exe=%~3
-    set param=%~4
-    set "rom_file=%project_dir%\%~5"
+    set tool_name=%~2
+    set tool_path=%~3
+    set tool_exe=%~4
+    set tool_param=%~5
+    set rom_file=%project_dir%%~6
     goto :RunTool
 )
-if /i "%~1"=="--backup" (
-    set "rom_file=%project_dir%\%~2.smc"
-    set "rom_name=%~2"
+if /i "%~1"=="--back-up" (
+    set rom_name=%~2
+    set rom_file=%project_dir%%~2.smc
     goto :Backup
 )
 if /i "%~1"=="--asar" (
-    set "rom_file=%project_dir%\%~2"
+    set rom_file=%project_dir%%~2
     goto :RunAsar
 )
 goto :ParseArgs
 
+
+::
+:: Functions
+::
+
+:: Open Default Text editor
 :RunEditor
 start "" /b "%file%"
 goto :Exit
 
+:: Backup
 :Backup
+
 :: Export MWL level files
-if not exist %levels_dir%\%time_stamp% (
-    mkdir %levels_dir%\%time_stamp%
+echo Exporting Levels...
+if not exist "%levels_dir%\%time_stamp%" (
+    mkdir "%levels_dir%\%time_stamp%"
 )
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportMultLevels %rom_file% %levels_dir%\%time_stamp%\level
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportMultLevels %rom_file% %levels_dir%\level
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportMultLevels "%rom_file%" "%levels_dir%\%time_stamp%\level"
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportMultLevels "%rom_file%" "%levels_dir%\level"
+:: Error handling
+if %errorlevel% equ 0 (
+    echo Levels backed up successfully!
+) else (
+    echo Failed to export Levels.
+)
+
 :: Export Map16
-if not exist %map16_dir% (
-    mkdir %map16_dir%
+echo Exporting Map16...
+if not exist "%map16_dir%" (
+    mkdir "%map16_dir%"
 )
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportAllMap16 %rom_file% %backup_dir%\latest_AllMap16.map16
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportAllMap16 %rom_file% %map16_dir%\%time_stamp%_AllMap16.map16
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportAllMap16 "%rom_file%" "%backup_dir%\latest_AllMap16.map16"
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportAllMap16 "%rom_file%" "%map16_dir%\%time_stamp%_AllMap16.map16"
+:: Error handling
+if %errorlevel% equ 0 (
+    echo Map16 backed up successfully!
+) else (
+    echo Failed to export Map16.
+)
+
 :: Export Palettes
-if not exist %palette_dir% (
-    mkdir %palette_dir%
+echo Exporting Shared palette...
+if not exist "%palette_dir%" (
+    mkdir "%palette_dir%"
 )
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportSharedPalette %rom_file% %backup_dir%\latest_Shared.pal
-start "Lunar Magic" /i /wait "%lm_exe%" -ExportSharedPalette %rom_file% %palette_dir%\%time_stamp%_Shared.pal
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportSharedPalette "%rom_file%" "%backup_dir%\latest_Shared.pal"
+start "%lm_name%" /b /i /wait "%lm_exe%" -ExportSharedPalette "%rom_file%" "%palette_dir%\%time_stamp%_Shared.pal"
+:: Error handling
+if %errorlevel% equ 0 (
+    echo Shared palette backed up successfully!
+) else (
+    echo Failed to export Shared palette.
+)
+
 :: Create time-stamped backup of your ROM
-if not exist %rom_dir% (
-    mkdir %rom_dir%
+echo Making ROM backup...
+if not exist "%rom_dir%" (
+    mkdir "%rom_dir%"
 )
-copy %rom_file% %rom_dir%\%time_stamp%_!rom_name!.smc
-copy %rom_file% %backup_dir%\latest_!rom_name!.smc
+copy "%rom_file%" "%rom_dir%\%time_stamp%_!rom_name!.smc"
+copy "%rom_file%" "%backup_dir%\latest_!rom_name!.smc"
+:: Error handling
+if %errorlevel% equ 0 (
+    echo ROM backed up successfully!
+) else (
+    echo Failed to backup ROM.
+)
+
+:: Exit
 goto :Exit
 
+:: Open Directory
 :OpenDir
 start "" /b "%path%"
 goto :Exit
 
+:: Run a Tool
 :RunTool
-start "%exe%" /b /d %path% /i /wait %exe% %param% %rom_file%
-echo Reload your ROM in Lunar Magic to see changes and before making more.
-pause
-exit
+pushd %tool_path%
+%tool_exe% "%tool_param%" "%rom_file%"
+if %errorlevel% equ 0 (
+    echo %tool_name% ran successfully!
+    echo Reload your ROM in Lunar Magic to see changes.
+) else (
+    echo Failed to run %tool_name%
+)
+popd
+goto :Exit
 
+:: Run Asar
 :RunAsar
-echo Applying patches with Asar...
+set "%tool_name%=Asar"
+echo Applying patches with %tool_name%...
 pushd %asar_path%
 for /f "tokens=*" %%a in ('findstr /v "^;" "%asar_list%"') do (
     %asar_exe% -v "%%a" %rom_file%
 )
+if %errorlevel% equ 0 (
+    echo %tool_name% ran successfully!
+    echo Reload your ROM in Lunar Magic to see changes.
+) else (
+    echo Failed to run %tool_name%
+)
 popd
-echo Done
-pause
-exit
+goto :Exit
 
+:: Open App
 :OpenApp
-start "" /i /wait "%path%\%app%" %param%
+start "" /b /i /wait "%app_path%\%app_exe%" %app_param%
 goto :Exit
 
 :Exit
+pause
 exit
