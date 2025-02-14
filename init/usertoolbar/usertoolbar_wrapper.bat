@@ -189,11 +189,11 @@ goto :Exit
 
 :: Run Asar
 :RunAsar
-set "%tool_name%=Asar"
+set "tool_name=Asar"
 echo Applying patches with %tool_name%...
 pushd %asar_path%
 for /f "tokens=*" %%a in ('findstr /v "^;" "%asar_list%"') do (
-    %asar_exe% -v "%%a" %rom_file%
+    %asar_exe% -v "%%a" "%rom_file%"
 )
 if %errorlevel% equ 0 (
     echo %tool_name% ran successfully!
