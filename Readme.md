@@ -16,6 +16,8 @@ A "baserom" in hacking jargon is just a term for a specific collection of tools,
 
 First, put a copy of your (headered) Super Mario World ROM and put it in "workspace" folder of this baserom template. You can rename it to whatever you like, e.g. `MyBaseRom.smc`, since the build processes are indifferent to the file name. If your ROM has a file extension of `.sfc` rename it to `.smc` this prevents minor headaches elsewhere.
 
+This doesn't have to be a clean ROM, it can be a resource that already has some resources in it, but I would recommend a relatively clean ROM.
+
 ### Initialize the Baserom Tools
 
 This resource comes with a first-run script `!initialize_baserom.bat` to setting up you project. It will automatically download all the common tools, if they aren't detected, and set them up for your convenience in the "tools" folder.
@@ -33,6 +35,10 @@ It is also common to Expand your ROM to at least 2MB via `File > Expand ROM > Ex
 To make life easier for you as a hacker, this project template comes with a custom User Toolbar in Lunar Magic (which you can see in the screenshot above). It uses a script on the backend to automate the process of applying additional custom assets to your ROM right from Lunar Magic without the need for scripts or dragging your rom around.
 
 ## Project Folders
+
+### backups
+
+The scripts as part of this resource have some functionality for backing up various parts of your project using Lunar Magic export.
 
 ### docs
 

@@ -21,6 +21,9 @@ explorer.exe %2
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM,LM_NO_CONSOLE_WINDOW
 
 ***START***
+LM_SPACER
+
+***START***
 usertoolbar_wrapper.bat "--back-up" "%5"
 25,Backup Project (Ctrl+B)
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
