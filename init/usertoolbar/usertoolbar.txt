@@ -120,7 +120,7 @@ LM_SPACER
 
 ; AddMusicK
 ***START***
-usertoolbar_wrapper.bat "--run-tool" "AddMusicK" "!amk_path!" "!amk_exe!" "-v" "%3"
+usertoolbar_wrapper.bat "--run-tool" "AddMusicK" "!amk_path!" "!amk_exe!" "" "%3"
 23,Insert music with AddMusicK
 LM_USEIMAGE_LIST,LM_CLOSE_ON_CLOSE,LM_DIR_LM
 
