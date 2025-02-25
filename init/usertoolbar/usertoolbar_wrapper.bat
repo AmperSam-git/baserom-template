@@ -211,7 +211,7 @@ echo Applying patches with %tool_name%...
 pushd %asar_path%
 :: Parse the list file
 for /f "tokens=*" %%a in ('findstr /v "^;" "%asar_list%"') do (
-    %asar_exe% -v "%%a" "%rom_file%"
+    %asar_exe% -v -wnofeature_deprecated "%%a" "%rom_file%"
 )
 :: error handling
 if %errorlevel% equ 0 (
